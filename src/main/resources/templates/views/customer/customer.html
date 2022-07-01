@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="es-MX">
+<div th:replace="layout/header :: estilos"></div>
+<body>
+	<div th:replace="layout/header :: header"></div>
+	<div class="d-flex" id="wrapper">
+		<div th:replace="layout/header :: menu"></div>
+		<div id="page-content-wrapper" style="width:100%;">
+			<!-- Page content-->
+			<div class="container-fluid" style="margin-top:15px;margin-bottom:10px;">
+				<h1 class="h1">Clientes</h1>
+				<h4 class="h4">Registrar nuevo cliente</h4>
+				<form method="post" id="customer-form" >
+				
+					<p>Nombre completo: <input type=""></p>
+					<p>Correo electr&oacute;nico: <input type="email"></p>
+					<p>Direcci&oacute;n: <input type="text"></p>
+					<p>Sucursal: <input type="text"></p>
+
+					<p><input type="button" value="Registrar" onclick="alert('Se registró nuevo cliente');"></p>
+				
+				</form>
+			</div>
+		</div>
+	</div>
+	<div th:replace="layout/header :: footer"></div>
+	<div th:replace="layout/header :: scripts"></div>
+	<script th:src="@{assets/js/index/index.js}"></script>
+</body>
+</html>

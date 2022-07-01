@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="es-MX">
+<div th:replace="layout/header :: estilos"></div>
+<body>
+	<div th:replace="layout/header :: header"></div>
+		<div class="d-flex" id="wrapper">
+		<div th:replace="layout/header :: menu"></div>
+		<div id="page-content-wrapper" style="width:100%;">
+			<!-- Page content-->
+			<div class="container-fluid" style="margin-top:15px;margin-bottom:10px;">
+				<form th:action="@{/registroPeliculas}" method="POST" class="Form"> 
+					<div class="login">
+						<div class="login-screen">
+							<div class="app-title">
+								<h1>Registro de Peliculas</h1>
+								<p class="text-danger" th:if="${error} != null" th:text="${error}"></p>
+							</div>
+	
+							<div class="login-form">
+								<div class="control-group">
+								<input type="text" id="tituloorig" name="tituloorig" class="login-field" value="" placeholder="Titulo original">
+								<label class="login-field-icon fui-user" for="login-name"></label>
+								</div>
+				
+								<div class="login-form">
+								<input type="text" id="tituloesp" name="tituloesp" class="login-field" value="" placeholder="Titulo de la pelicula">
+								<label class="login-field-icon fui-user" for="login-name"></label>
+								</div>
+								
+								<div class="login-form">
+								<input type="text" id="directorname" name="directorname" class="login-field" value="" placeholder="Nombre del director">
+								<label class="login-field-icon fui-user" for="login-name"></label>
+								</div>
+								
+								
+								<div class="login-form">
+								<input type="text" id="productora" name="productora" class="login-field" value="" placeholder="productora">
+								<label class="login-field-icon fui-user" for="login-name"></label>
+								</div>
+								
+								<select id="selectPais" name="selectPais" class="form-control">
+											<option value="-1">Selecciona una opciÃ³n</option>
+											<option th:each="country : ${country}" th:value="${country.id}"
+												th:text="${country.country}"></option>
+								</select>
+								
+								<select>
+									    <option value="A">Todo publico</option>
+									    <option value="B"> Adolescentes mayores a 12 años.</option>
+									    <option value="C">Para adultos </option>
+									    <option value="D">Sólo para adultos</option>
+								</select>
+				
+								<button type="submit" class="btn btn-primary btn-large btn-block" href="#">login</button>
+							</div>
+					</div>
+					</div>
+					</form>
+					</div>
+					</div>
+					
+	</div>
+	<div th:replace="layout/header :: footer"></div>
+	<div th:replace="layout/header :: scripts"></div>
+	<script th:src="@{assets/js/index/index.js}"></script>
+</body>
+</html>

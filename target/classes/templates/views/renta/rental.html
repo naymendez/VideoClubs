@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="es-MX">
+<div th:replace="layout/header :: estilos"></div>
+<body>
+	<div th:replace="layout/header :: header"></div>
+	<div class="d-flex" id="wrapper">
+		<div th:replace="layout/header :: menu"></div>
+		<div id="page-content-wrapper" style="width:100%;">
+			<!-- Page content-->
+			<div class="container-fluid" style="margin-top:15px;margin-bottom:10px;">
+				
+				<h1 class="h1">Rentas</h1>
+				<h4 class="h4">Registrar nueva renta</h4>
+				<form method="post" id="rental-form" >
+				
+					<p>N&uacute;mero del cliente: <input type="number"></p>
+					<p>N&uacute;mero de inventario: <input type="number"></p>
+					<p>Importe de pago: <input type="number"></p>
+					<table class="table" id="tablaTarifaUser">
+						<thead>
+							<tr>
+								<th>T&iacute;tulo de Pel&iacute;cula</th>
+								<th>Tarifa</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+					<p>Subtotal <input type="number" readonly></p>
+					<p>IVA <input type="number" readonly></p>
+					<p>Total <input type="number" readonly></p>
+					<p>Ingresar pago: <input type="number"></p>
+					<input type="button" value="Registrar" onclick="alert('Renta Registrada');">
+					<p>Cambio: <input type="number"></p>
+					<input type="button" value="Generar Recibo" onclick="alert('Recibo Generado');">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div th:replace="layout/header :: footer"></div>
+	<div th:replace="layout/header :: scripts"></div>
+	<script th:src="@{assets/js/index/index.js}"></script>
+</body>
+</html>
